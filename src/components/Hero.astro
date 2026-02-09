@@ -1,6 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import heroImage from '../assets/image3.jpeg';
+import type { Translations } from '../i18n/translations';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
 ---
 
 <section class="hero">
@@ -13,11 +20,9 @@ import heroImage from '../assets/image3.jpeg';
     loading="eager"
   />
   <div class="hero__content">
-    <h1 class="hero__title-jp">合気道 冠光寺流</h1>
-    <p class="hero__title-en">Aikido Kankouji-ryu</p>
-    <p class="hero__tagline">
-      The way of harmony &mdash; cultivating body, mind, and spirit through the art of Aikido
-    </p>
-    <a href="#about" class="hero__cta">Discover Aikido</a>
+    <h1 class="hero__title-jp">{t.hero.titleJp}</h1>
+    <p class="hero__title-en">{t.hero.titleEn}</p>
+    <p class="hero__tagline">{t.hero.tagline}</p>
+    <a href="#about" class="hero__cta">{t.hero.cta}</a>
   </div>
 </section>

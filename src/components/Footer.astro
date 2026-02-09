@@ -1,4 +1,11 @@
 ---
+import type { Translations } from '../i18n/translations';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -28,7 +35,7 @@ const currentYear = new Date().getFullYear();
         </svg>
       </a>
     </div>
-    <p class="footer__copy">&copy; {currentYear} Aikido Kankouji-ryu. All rights reserved.</p>
-    <a href="#" class="footer__top-link">Back to top &uarr;</a>
+    <p class="footer__copy">&copy; {currentYear} {t.footer.copy}</p>
+    <a href="#" class="footer__top-link">{t.footer.backToTop}</a>
   </div>
 </footer>

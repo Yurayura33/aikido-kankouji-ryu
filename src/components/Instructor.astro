@@ -1,12 +1,19 @@
 ---
 import { Image } from 'astro:assets';
 import instructorImage from '../assets/image1.jpeg';
+import type { Translations } from '../i18n/translations';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
 ---
 
 <section id="instructor" class="section">
   <div class="container">
-    <h2 class="section__title">Instructor</h2>
-    <p class="section__subtitle">指導者</p>
+    <h2 class="section__title">{t.instructor.title}</h2>
+    <p class="section__subtitle">{t.instructor.subtitle}</p>
     <div class="instructor__grid">
       <div class="instructor__image-wrapper">
         <Image
@@ -18,19 +25,10 @@ import instructorImage from '../assets/image1.jpeg';
         />
       </div>
       <div class="instructor__info">
-        <h3 class="instructor__name">Joseph Eiko</h3>
-        <p class="instructor__rank">7th Dan Shihan &mdash; Kankouji-ryu Jujutsu</p>
-        <p class="instructor__bio">
-          From a young age, Joseph has studied Qigong and martial arts, while also immersing himself
-          in the spiritual traditions of the East. His training includes Kendo, Karate, and Aikido,
-          and he currently holds the rank of 7th Dan Shihan in Kankouji-ryu Jujutsu.
-        </p>
-        <p class="instructor__bio">
-          Now based in the UK, he also provides treatments that help balance the flow of "Ki,"
-          supporting harmony of both body and mind. With years of experience in martial arts and
-          energy practice, Joseph is dedicated to sharing his knowledge in a clear and approachable
-          way.
-        </p>
+        <h3 class="instructor__name">{t.instructor.name}</h3>
+        <p class="instructor__rank">{t.instructor.rank}</p>
+        <p class="instructor__bio">{t.instructor.bio1}</p>
+        <p class="instructor__bio">{t.instructor.bio2}</p>
       </div>
     </div>
   </div>

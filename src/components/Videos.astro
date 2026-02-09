@@ -1,13 +1,19 @@
 ---
+import type { Translations } from '../i18n/translations';
 
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
 ---
 
 <section id="videos" class="section section--alt">
   <div class="container">
-    <h2 class="section__title">Videos & Social</h2>
-    <p class="section__subtitle">動画・SNS</p>
+    <h2 class="section__title">{t.videos.title}</h2>
+    <p class="section__subtitle">{t.videos.subtitle}</p>
     <div class="videos__content">
-      <p class="videos__description">Watch our training sessions and technique demonstrations on YouTube, or follow us on Instagram for the latest updates.</p>
+      <p class="videos__description">{t.videos.description}</p>
       <div class="videos__social">
         <a
           href="https://www.youtube.com/@kienergyjoseph"

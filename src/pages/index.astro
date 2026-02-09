@@ -1,25 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Instructor from '../components/Instructor.astro';
-import Videos from '../components/Videos.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
+const base = '/aikido-kankouji-ryu';
 ---
 
-<Layout
-  title="Aikido Kankouji-ryu | 合気道 冠光寺流"
-  description="Aikido Kankouji-ryu dojo in the UK, led by Joseph Eiko (7th Dan Shihan). Learn the way of harmony through traditional Aikido training."
->
-  <Header />
-  <main>
-    <Hero />
-    <About />
-    <Instructor />
-    <Videos />
-    <Contact />
-  </main>
-  <Footer />
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0;url=${base}/en/`} />
+    <link rel="canonical" href={`${base}/en/`} />
+    <title>Redirecting…</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href={`${base}/en/`}>English version</a>…</p>
+  </body>
+</html>

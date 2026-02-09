@@ -2,31 +2,39 @@
 interface Props {
   title: string;
   description: string;
+  lang?: string;
+  ogLocale?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, lang = 'en', ogLocale = 'en_GB' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const base = '/aikido-kankouji-ryu';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; form-action 'none'; base-uri 'self'; connect-src 'self';"
+      content="default-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; form-action 'none'; base-uri 'self'; connect-src 'self';"
     />
     <meta name="description" content={description} />
     <meta name="author" content="Joseph Eiko" />
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- Hreflang alternate links -->
+    <link rel="alternate" hreflang="en" href={new URL(`${base}/en/`, Astro.site)} />
+    <link rel="alternate" hreflang="ja" href={new URL(`${base}/ja/`, Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(`${base}/en/`, Astro.site)} />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale" content={ogLocale} />
 
     <!-- Google Fonts (Noto Serif JP + Noto Sans JP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
