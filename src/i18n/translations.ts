@@ -67,7 +67,7 @@ export const en: Translations = {
     titleEn: 'Aikido Kankouji-ryu',
     tagline:
       'The way of harmony \u2014 cultivating body, mind, and spirit through the art of Aikido',
-    cta: 'Discover Aikido',
+    cta: 'Get in Touch',
   },
   about: {
     title: 'What is Aikido?',

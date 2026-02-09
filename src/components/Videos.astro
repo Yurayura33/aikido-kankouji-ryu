@@ -14,6 +14,15 @@ const { t } = Astro.props;
     <p class="section__subtitle">{t.videos.subtitle}</p>
     <div class="videos__content">
       <p class="videos__description">{t.videos.description}</p>
+      <div class="videos__embed">
+        <iframe
+          src="https://www.youtube.com/embed/-pBk1puW0mc"
+          title="A Japanese in the UK Exploring the World of Ki energy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
       <div class="videos__social">
         <a
           href="https://www.youtube.com/@kienergyjoseph"
