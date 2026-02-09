@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/image3.jpeg';
+---
+
+<section class="hero">
+  <Image
+    src={heroImage}
+    alt="Aikido training session at Kankouji-ryu dojo"
+    class="hero__image"
+    widths={[600, 900, 1200, 1800]}
+    sizes="100vw"
+    loading="eager"
+  />
+  <div class="hero__content">
+    <h1 class="hero__title-jp">合気道 冠光寺流</h1>
+    <p class="hero__title-en">Aikido Kankouji-ryu</p>
+    <p class="hero__tagline">
+      The way of harmony &mdash; cultivating body, mind, and spirit through the art of Aikido
+    </p>
+    <a href="#about" class="hero__cta">Discover Aikido</a>
+  </div>
+</section>
