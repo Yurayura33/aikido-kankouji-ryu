@@ -1,15 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-import bandImage from '../assets/image3.jpeg';
+import img3 from '../assets/image3.jpeg';
+import img4 from '../assets/image4.jpeg';
+import img5 from '../assets/image5.jpeg';
+import img6 from '../assets/image6.jpeg';
 ---
 
 <div class="image-band" aria-hidden="true">
-  <Image
-    src={bandImage}
-    alt=""
-    class="image-band__img"
-    widths={[600, 900, 1200, 1800]}
-    sizes="100vw"
-    loading="lazy"
-  />
+  <Image src={img5} alt="" class="image-band__img" widths={[300, 450, 600]} sizes="(min-width: 768px) 25vw, 50vw" loading="lazy" />
+  <Image src={img6} alt="" class="image-band__img" widths={[300, 450, 600]} sizes="(min-width: 768px) 25vw, 50vw" loading="lazy" />
+  <Image src={img3} alt="" class="image-band__img" widths={[300, 450, 600]} sizes="(min-width: 768px) 25vw, 50vw" loading="lazy" />
+  <Image src={img4} alt="" class="image-band__img" widths={[300, 450, 600]} sizes="(min-width: 768px) 25vw, 50vw" loading="lazy" />
 </div>
