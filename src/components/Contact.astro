@@ -20,7 +20,7 @@ const { t } = Astro.props;
         </svg>
         <p class="contact__label">{t.contact.emailLabel}</p>
         <p class="contact__value">
-          <a href="mailto:info@example.com">info@example.com</a>
+          <a href="mailto:irisoneunited@gmail.com">irisoneunited@gmail.com</a>
         </p>
       </div>
       <div class="contact__item">
@@ -29,7 +29,7 @@ const { t } = Astro.props;
         </svg>
         <p class="contact__label">{t.contact.phoneLabel}</p>
         <p class="contact__value">
-          <a href="tel:+44XXXXXXXXXX">+44 XXXX XXXXXX</a>
+          <a href="tel:+447789297482X">077 8929 7482</a>
         </p>
       </div>
       <div class="contact__item">
@@ -38,10 +38,18 @@ const { t } = Astro.props;
           <circle cx="12" cy="10" r="3"/>
         </svg>
         <p class="contact__label">{t.contact.locationLabel}</p>
-        <p class="contact__value">{t.contact.locationValue}</p>
+        <p class="contact__value" set:html={t.contact.locationValue.replace(/\n/g, '<br>')} />
         <p class="contact__value">
           <a href="https://maps.app.goo.gl/PEHxo85Skv7LFi8j8" target="_blank" rel="noopener noreferrer">{t.contact.viewOnMap}</a>
         </p>
+      </div>
+      <div class="contact__item">
+        <svg class="contact__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <p class="contact__label">{t.contact.scheduleLabel}</p>
+        <p class="contact__value">{t.contact.scheduleValue}</p>
       </div>
     </div>
     <div class="contact__map">

@@ -51,6 +51,8 @@ export interface Translations {
     phoneLabel: string;
     locationLabel: string;
     locationValue: string;
+    scheduleLabel: string;
+    scheduleValue: string;
     viewOnMap: string;
   };
   footer: {
@@ -117,7 +119,7 @@ export const en: Translations = {
         text: 'Just yourself, a bottle of water, and an open mind. Please remove jewellery before training.',
       },
     ],
-    pricing: 'Interested? Contact us to book your first session.',
+    pricing: 'Your first class is free. After that: £30/month or £10 per lesson.',
   },
   videos: {
     title: 'Videos & Social',
@@ -131,7 +133,9 @@ export const en: Translations = {
     emailLabel: 'Email',
     phoneLabel: 'Phone',
     locationLabel: 'Location',
-    locationValue: 'United Kingdom',
+    locationValue: 'Nickel Support Carshalton\nRichard James Hub, 16 The Parade,\nBeynon Rd, Carshalton SM5 3RL',
+    scheduleLabel: 'Schedule',
+    scheduleValue: 'Every Sunday, 3:15 – 4:15 PM',
     viewOnMap: 'View on Google Maps',
   },
   footer: {
