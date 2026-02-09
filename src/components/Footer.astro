@@ -1,11 +1,5 @@
 ---
-import type { Translations } from '../i18n/translations';
-
-interface Props {
-  t: Translations;
-}
-
-const { t } = Astro.props;
+import { t } from '../content';
 const currentYear = new Date().getFullYear();
 ---
 

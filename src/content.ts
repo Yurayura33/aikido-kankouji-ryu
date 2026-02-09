@@ -1,67 +1,4 @@
-export interface Translations {
-  meta: {
-    title: string;
-    description: string;
-  };
-  nav: {
-    about: string;
-    instructor: string;
-    firstVisit: string;
-    videos: string;
-    contact: string;
-  };
-  hero: {
-    titleJp: string;
-    titleEn: string;
-    tagline: string;
-    cta: string;
-    scroll: string;
-  };
-  about: {
-    title: string;
-    subtitle: string;
-    p1: string;
-    p2: string;
-    p3: string;
-  };
-  instructor: {
-    title: string;
-    subtitle: string;
-    name: string;
-    rank: string;
-    bio1: string;
-    bio2: string;
-  };
-  firstVisit: {
-    title: string;
-    subtitle: string;
-    intro: string;
-    items: { label: string; text: string }[];
-    pricing: string;
-  };
-  videos: {
-    title: string;
-    subtitle: string;
-    description: string;
-  };
-  contact: {
-    title: string;
-    subtitle: string;
-    emailLabel: string;
-    phoneLabel: string;
-    locationLabel: string;
-    locationValue: string;
-    scheduleLabel: string;
-    scheduleValue: string;
-    viewOnMap: string;
-  };
-  footer: {
-    copy: string;
-    backToTop: string;
-  };
-}
-
-export const en: Translations = {
+export const t = {
   meta: {
     title: 'Aikido Kankouji-ryu | 合気道 冠光寺流',
     description:
@@ -133,7 +70,7 @@ export const en: Translations = {
     emailLabel: 'Email',
     phoneLabel: 'Phone',
     locationLabel: 'Location',
-    locationValue: 'Nickel Support Carshalton\nRichard James Hub, 16 The Parade,\nBeynon Rd, Carshalton SM5 3RL',
+    locationValue: 'Nickel Support Carshalton, Richard James Hub, 16 The Parade, Beynon Rd, Carshalton SM5 3RL',
     scheduleLabel: 'Schedule',
     scheduleValue: 'Every Sunday, 3:15 – 4:15 PM',
     viewOnMap: 'View on Google Maps',

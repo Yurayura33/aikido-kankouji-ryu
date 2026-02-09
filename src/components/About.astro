@@ -1,13 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import aboutImage from '../assets/image2.jpeg';
-import type { Translations } from '../i18n/translations';
-
-interface Props {
-  t: Translations;
-}
-
-const { t } = Astro.props;
+import { t } from '../content';
 ---
 
 <section id="about" class="section section--alt">

@@ -1,11 +1,5 @@
 ---
-import type { Translations } from '../i18n/translations';
-
-interface Props {
-  t: Translations;
-}
-
-const { t } = Astro.props;
+import { t } from '../content';
 ---
 
 <section id="contact" class="section section--alt">
@@ -27,7 +21,7 @@ const { t } = Astro.props;
           <circle cx="12" cy="10" r="3"/>
         </svg>
         <p class="contact__label">{t.contact.locationLabel}</p>
-        <p class="contact__value" set:html={t.contact.locationValue.replace(/\n/g, '<br>')} />
+        <p class="contact__value">{t.contact.locationValue}</p>
         <p class="contact__value">
           <a href="https://maps.app.goo.gl/PEHxo85Skv7LFi8j8" target="_blank" rel="noopener noreferrer">{t.contact.viewOnMap}</a>
         </p>

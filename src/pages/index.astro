@@ -9,24 +9,22 @@ import FirstVisit from '../components/FirstVisit.astro';
 import Videos from '../components/Videos.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
-import { en } from '../i18n/translations';
-
-const t = en;
+import { t } from '../content';
 ---
 
 <Layout
   title={t.meta.title}
   description={t.meta.description}
 >
-  <Header t={t} />
+  <Header />
   <main>
-    <Hero t={t} />
-    <About t={t} />
-    <Instructor t={t} />
-    <FirstVisit t={t} />
+    <Hero />
+    <About />
+    <Instructor />
+    <FirstVisit />
     <ImageBand />
-    <Videos t={t} />
-    <Contact t={t} />
+    <Videos />
+    <Contact />
   </main>
-  <Footer t={t} />
+  <Footer />
 </Layout>
