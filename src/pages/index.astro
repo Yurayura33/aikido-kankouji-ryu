@@ -1,16 +1,28 @@
 ---
-const base = '/aikido-kankouji-ryu';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Instructor from '../components/Instructor.astro';
+import Videos from '../components/Videos.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import { en } from '../i18n/translations';
+
+const t = en;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content={`0;url=${base}/en/`} />
-    <link rel="canonical" href={`${base}/en/`} />
-    <title>Redirecting…</title>
-  </head>
-  <body>
-    <p>Redirecting to <a href={`${base}/en/`}>English version</a>…</p>
-  </body>
-</html>
+<Layout
+  title={t.meta.title}
+  description={t.meta.description}
+>
+  <Header t={t} />
+  <main>
+    <Hero t={t} />
+    <About t={t} />
+    <Instructor t={t} />
+    <Videos t={t} />
+    <Contact t={t} />
+  </main>
+  <Footer t={t} />
+</Layout>

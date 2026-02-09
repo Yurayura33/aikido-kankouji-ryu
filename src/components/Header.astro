@@ -3,10 +3,9 @@ import type { Translations } from '../i18n/translations';
 
 interface Props {
   t: Translations;
-  lang: string;
 }
 
-const { t, lang } = Astro.props;
+const { t } = Astro.props;
 
 const navLinks = [
   { href: '#about', label: t.nav.about },
@@ -27,9 +26,6 @@ const navLinks = [
       {navLinks.map(link => (
         <li><a href={link.href} class="nav__link">{link.label}</a></li>
       ))}
-      <li>
-        <a href={t.nav.langSwitchHref} class="nav__lang-switch">{t.nav.langSwitch}</a>
-      </li>
     </ul>
   </div>
 </nav>

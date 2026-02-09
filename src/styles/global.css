@@ -215,23 +215,6 @@ p {
   color: var(--color-gold);
 }
 
-/* Language Switcher */
-.nav__lang-switch {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border: 1px solid var(--color-accent);
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-accent);
-  letter-spacing: 0.02em;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.nav__lang-switch:hover {
-  background-color: var(--color-accent);
-  color: var(--color-white);
-}
 
 /* ===== Hero ===== */
 .hero {
@@ -567,10 +550,6 @@ p {
     border-bottom: none;
   }
 
-  .nav__lang-switch {
-    margin-top: 0.5rem;
-    text-align: center;
-  }
 }
 
 /* ===== Responsive: Desktop ===== */

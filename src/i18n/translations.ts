@@ -2,15 +2,12 @@ export interface Translations {
   meta: {
     title: string;
     description: string;
-    ogLocale: string;
   };
   nav: {
     about: string;
     instructor: string;
     videos: string;
     contact: string;
-    langSwitch: string;
-    langSwitchHref: string;
   };
   hero: {
     titleJp: string;
@@ -58,15 +55,12 @@ export const en: Translations = {
     title: 'Aikido Kankouji-ryu | 合気道 冠光寺流',
     description:
       'Aikido Kankouji-ryu dojo in the UK, led by Joseph Eiko (7th Dan Shihan). Learn the way of harmony through traditional Aikido training.',
-    ogLocale: 'en_GB',
   },
   nav: {
     about: 'About',
     instructor: 'Instructor',
     videos: 'Videos',
     contact: 'Contact',
-    langSwitch: '日本語',
-    langSwitchHref: '/aikido-kankouji-ryu/ja/',
   },
   hero: {
     titleJp: '合気道 冠光寺流',
@@ -108,62 +102,5 @@ export const en: Translations = {
   footer: {
     copy: 'Aikido Kankouji-ryu. All rights reserved.',
     backToTop: 'Back to top \u2191',
-  },
-};
-
-export const ja: Translations = {
-  meta: {
-    title: '合気道 冠光寺流 | Aikido Kankouji-ryu',
-    description:
-      '英国を拠点とする合気道冠光寺流の道場。ジョセフ・栄光（七段師範）が指導。伝統的な合気道の稽古を通じて、調和の道を学びましょう。',
-    ogLocale: 'ja_JP',
-  },
-  nav: {
-    about: '合気道について',
-    instructor: '指導者',
-    videos: '動画',
-    contact: 'お問い合わせ',
-    langSwitch: 'English',
-    langSwitchHref: '/aikido-kankouji-ryu/en/',
-  },
-  hero: {
-    titleJp: '合気道 冠光寺流',
-    titleEn: 'Aikido Kankouji-ryu',
-    tagline: '調和の道 — 合気道を通じて心身を磨き、精神を養う',
-    cta: '合気道を知る',
-  },
-  about: {
-    title: '合気道とは',
-    subtitle: 'What is Aikido?',
-    p1: '合気道の精神は「合気」という言葉に表されるように、争わず共に調和して生きるという姿勢にあります。合気道は単なる格闘技ではなく、自分と他者の両方を守り、平和を築くための道です。',
-    p2: 'そのため、合気道は力でぶつかるのではなく、相手のエネルギーを受け入れ、導くことで調和を生み出すことを重視します。稽古を通じて、心身を鍛え、敬意の心を育み、勝ち負けよりも互いの成長を大切にします。',
-    p3: 'この精神は道場の外にも広がり、困難に柔軟に対応する力、人間関係の中に調和を求める力、そして正しい姿勢と呼吸を通じて内面の安定を得る力を育みます。',
-  },
-  instructor: {
-    title: '指導者',
-    subtitle: 'Instructor',
-    name: 'ジョセフ・栄光',
-    rank: '冠光寺流柔術 七段師範',
-    bio1: 'ジョセフは幼少期より気功や武道を学び、東洋の精神的伝統にも深く関わってきました。剣道、空手、合気道の修行を経て、現在は冠光寺流柔術の七段師範の位を持っています。',
-    bio2: '現在は英国を拠点に、「気」の流れを整える施術も行い、心身の調和をサポートしています。長年の武道と気の実践の経験を活かし、わかりやすく親しみやすい形で知識を伝えることに尽力しています。',
-  },
-  videos: {
-    title: '動画・SNS',
-    subtitle: 'Videos & Social',
-    description:
-      'YouTubeで稽古や技の実演をご覧いただけます。Instagramでは最新情報を発信しています。',
-  },
-  contact: {
-    title: 'お問い合わせ',
-    subtitle: 'Contact',
-    emailLabel: 'メール',
-    phoneLabel: '電話',
-    locationLabel: '所在地',
-    locationValue: '英国',
-    viewOnMap: 'Google マップで見る',
-  },
-  footer: {
-    copy: '合気道 冠光寺流 All rights reserved.',
-    backToTop: 'トップへ戻る \u2191',
   },
 };
