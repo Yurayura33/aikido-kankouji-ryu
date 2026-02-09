@@ -6,6 +6,7 @@ export interface Translations {
   nav: {
     about: string;
     instructor: string;
+    firstVisit: string;
     videos: string;
     contact: string;
   };
@@ -14,6 +15,7 @@ export interface Translations {
     titleEn: string;
     tagline: string;
     cta: string;
+    scroll: string;
   };
   about: {
     title: string;
@@ -29,6 +31,13 @@ export interface Translations {
     rank: string;
     bio1: string;
     bio2: string;
+  };
+  firstVisit: {
+    title: string;
+    subtitle: string;
+    intro: string;
+    items: { label: string; text: string }[];
+    pricing: string;
   };
   videos: {
     title: string;
@@ -59,6 +68,7 @@ export const en: Translations = {
   nav: {
     about: 'About',
     instructor: 'Instructor',
+    firstVisit: 'First Visit',
     videos: 'Videos',
     contact: 'Contact',
   },
@@ -68,6 +78,7 @@ export const en: Translations = {
     tagline:
       'The way of harmony \u2014 cultivating body, mind, and spirit through the art of Aikido',
     cta: 'Get in Touch',
+    scroll: 'Scroll',
   },
   about: {
     title: 'What is Aikido?',
@@ -83,6 +94,30 @@ export const en: Translations = {
     rank: '7th Dan Shihan \u2014 Kankouji-ryu Jujutsu',
     bio1: 'From a young age, Joseph has studied Qigong and martial arts, while also immersing himself in the spiritual traditions of the East. His training includes Kendo, Karate, and Aikido, and he currently holds the rank of 7th Dan Shihan in Kankouji-ryu Jujutsu.',
     bio2: 'Now based in the UK, he also provides treatments that help balance the flow of \u201cKi,\u201d supporting harmony of both body and mind. With years of experience in martial arts and energy practice, Joseph is dedicated to sharing his knowledge in a clear and approachable way.',
+  },
+  firstVisit: {
+    title: 'Your First Class',
+    subtitle: 'はじめての方へ',
+    intro: 'New to Aikido? Everyone is welcome, regardless of age or experience. Here\u2019s what to know before your first session.',
+    items: [
+      {
+        label: 'What to wear',
+        text: 'Comfortable, loose-fitting clothing such as a tracksuit or T-shirt and joggers. If you have a gi (training uniform), feel free to bring it.',
+      },
+      {
+        label: 'Fitness level',
+        text: 'No prior fitness or martial arts experience is required. Training is adapted to each individual\u2019s ability.',
+      },
+      {
+        label: 'What to expect',
+        text: 'Classes begin with warm-up exercises and breathing, followed by technique practice with a partner. The atmosphere is respectful and supportive.',
+      },
+      {
+        label: 'What to bring',
+        text: 'Just yourself, a bottle of water, and an open mind. Please remove jewellery before training.',
+      },
+    ],
+    pricing: 'Interested? Contact us to book your first session.',
   },
   videos: {
     title: 'Videos & Social',

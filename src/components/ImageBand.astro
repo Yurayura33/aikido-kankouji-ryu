@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import bandImage from '../assets/image3.jpeg';
+---
+
+<div class="image-band" aria-hidden="true">
+  <Image
+    src={bandImage}
+    alt=""
+    class="image-band__img"
+    widths={[600, 900, 1200, 1800]}
+    sizes="100vw"
+    loading="lazy"
+  />
+</div>

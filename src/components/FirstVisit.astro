@@ -1,0 +1,28 @@
+---
+import type { Translations } from '../i18n/translations';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="first-visit" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">{t.firstVisit.title}</h2>
+    <p class="section__subtitle">{t.firstVisit.subtitle}</p>
+    <div class="first-visit__content">
+      <p class="first-visit__intro">{t.firstVisit.intro}</p>
+      <dl class="first-visit__list">
+        {t.firstVisit.items.map(item => (
+          <div class="first-visit__item">
+            <dt class="first-visit__label">{item.label}</dt>
+            <dd class="first-visit__text">{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="first-visit__pricing">{t.firstVisit.pricing}</p>
+    </div>
+  </div>
+</section>
