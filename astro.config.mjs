@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'http://irisoneunited.co.uk',
+  site: 'https://irisoneunited.co.uk',
   base: '/',
 });
