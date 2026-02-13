@@ -73,6 +73,10 @@ export const t = {
     locationValue: 'Nickel Support Carshalton, Richard James Hub, 16 The Parade, Beynon Rd, Carshalton SM5 3RL',
     scheduleLabel: 'Schedule',
     scheduleValue: 'Every Sunday, 3:15 – 4:15 PM',
+    trialLabel: 'Trial Class in Croydon',
+    trialSchedule: 'Roughly every 3rd Friday of the month (dates may vary)',
+    trialLocation: '21 N End, Croydon CR0 1TY',
+    trialNote: 'Details and confirmed dates will be announced on our',
     viewOnMap: 'View on Google Maps',
   },
   footer: {

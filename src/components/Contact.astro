@@ -14,16 +14,25 @@ import { t } from '../content';
         </svg>
         <p class="contact__label">{t.contact.scheduleLabel}</p>
         <p class="contact__value">{t.contact.scheduleValue}</p>
+        <p class="contact__value">{t.contact.locationValue}</p>
+        <p class="contact__value">
+          <a href="https://maps.app.goo.gl/PEHxo85Skv7LFi8j8" target="_blank" rel="noopener noreferrer" class="contact__link-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            {t.contact.viewOnMap}
+          </a>
+        </p>
       </div>
       <div class="contact__item">
         <svg class="contact__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-          <circle cx="12" cy="10" r="3"/>
+          <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
         </svg>
-        <p class="contact__label">{t.contact.locationLabel}</p>
-        <p class="contact__value">{t.contact.locationValue}</p>
-        <p class="contact__value">
-          <a href="https://maps.app.goo.gl/PEHxo85Skv7LFi8j8" target="_blank" rel="noopener noreferrer">{t.contact.viewOnMap}</a>
+        <p class="contact__label">{t.contact.trialLabel}</p>
+        <p class="contact__value">{t.contact.trialSchedule}</p>
+        <p class="contact__value">{t.contact.trialLocation}</p>
+        <p class="contact__value contact__value--note">
+          {t.contact.trialNote}
+          <a href="https://www.instagram.com/joseph__martialarts" target="_blank" rel="noopener noreferrer">Instagram</a> and
+          <a href="https://www.facebook.com/profile.php?id=61572194902716" target="_blank" rel="noopener noreferrer">Facebook</a>.
         </p>
       </div>
       <div class="contact__item">

@@ -556,9 +556,27 @@ p {
   font-size: 0.95rem;
 }
 
+.contact__value--note {
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
 .contact__value a {
   color: var(--color-accent);
   font-weight: 500;
+}
+
+.contact__link-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.contact__link-icon svg {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
 }
 
 /* ===== Contact Map ===== */
