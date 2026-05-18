@@ -28,8 +28,6 @@ Static files are output to `dist/`.
 
 The site deploys automatically to GitHub Pages on every push to `main` via GitHub Actions.
 
-**Live URL:** https://hoshiko-tech.github.io/aikido-kankouji-ryu/
-
 ### Manual deployment setup
 
 1. Go to repository **Settings > Pages**
