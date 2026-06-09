@@ -13,7 +13,12 @@ import { t } from '../content';
           <polyline points="12 6 12 12 16 14"/>
         </svg>
         <p class="contact__label">{t.contact.scheduleLabel}</p>
-        <p class="contact__value">{t.contact.scheduleValue}</p>
+        {t.contact.scheduleValue.map((s) => (
+          <>
+            <p class="contact__value">{s.day}</p>
+            <p class="contact__value">{s.time}</p>
+          </>
+        ))}
         <p class="contact__value">{t.contact.locationValue}</p>
         <p class="contact__value">
           <a href="https://maps.app.goo.gl/PEHxo85Skv7LFi8j8" target="_blank" rel="noopener noreferrer" class="contact__link-icon">

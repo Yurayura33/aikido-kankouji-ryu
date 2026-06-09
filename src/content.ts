@@ -72,7 +72,10 @@ export const t = {
     locationLabel: 'Location',
     locationValue: 'Nickel Support Carshalton, Richard James Hub, 16 The Parade, Beynon Rd, Carshalton SM5 3RL',
     scheduleLabel: 'Schedule',
-    scheduleValue: 'Every Sunday, 3:15 – 4:15 PM',
+    scheduleValue: [
+      { day: 'Every Sunday', time: '3:15 – 4:15 PM' },
+      { day: 'Every Wednesday', time: '7:00 – 8:00 PM' },
+    ],
     trialLabel: 'Trial Class in Croydon',
     trialSchedule: 'Roughly every 3rd Friday of the month (dates may vary)',
     trialLocation: '21 N End, Croydon CR0 1TY',
