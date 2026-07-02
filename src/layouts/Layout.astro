@@ -2,15 +2,24 @@
 interface Props {
   title: string;
   description: string;
+  schema?: Record<string, unknown>;
+  ogImage?: string;
+  theme?: string;
+  noindex?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, schema, ogImage = 'og-image.jpg', theme, noindex = false } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const base = import.meta.env.BASE_URL;
+
+// Build the JSON-LD object, injecting context + canonical URL.
+const jsonLd = schema
+  ? { '@context': 'https://schema.org', ...schema, url: canonicalURL }
+  : null;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme={theme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +28,8 @@ const base = import.meta.env.BASE_URL;
       content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com https://www.youtube.com; form-action 'none'; base-uri 'self'; connect-src 'self';"
     />
     <meta name="description" content={description} />
-    <meta name="author" content="Joseph Eiko" />
+    <meta name="author" content="Joseph" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
@@ -28,7 +38,7 @@ const base = import.meta.env.BASE_URL;
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content="en_GB" />
-    <meta property="og:image" content={new URL(`${base}og-image.jpg`, Astro.site)} />
+    <meta property="og:image" content={new URL(`${base}${ogImage}`, Astro.site)} />
 
     <!-- Google Fonts (Noto Serif JP + Noto Sans JP) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,32 +51,12 @@ const base = import.meta.env.BASE_URL;
     <title>{title}</title>
 
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SportsActivityLocation",
-      "name": "Aikido Kankouji-ryu",
-      "description": description,
-      "url": canonicalURL,
-      "sport": "Aikido",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1A The Parade, Benyon Rd",
-        "addressLocality": "Carshalton",
-        "addressRegion": "Surrey",
-        "postalCode": "SM5 3RL",
-        "addressCountry": "GB"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 51.3626838,
-        "longitude": -0.1677329
-      }
-    })} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
-    <a href="#about" class="skip-link">Skip to content</a>
+    <a href="#main" class="skip-link">Skip to content</a>
     <slot />
-    <script src="/aikido-kankouji-ryu/nav.js" defer></script>
+    <script src={`${base}nav.js`} defer></script>
   </body>
 </html>
 

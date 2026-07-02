@@ -1,8 +1,30 @@
-export const t = {
+const description =
+  'Aikido Kankouji-ryu dojo in the UK, led by Joseph Eiko (7th Dan Shihan). Learn the way of harmony through traditional Aikido training.';
+
+export const aikido = {
   meta: {
     title: 'Aikido Kankouji-ryu | 合気道 冠光寺流',
-    description:
-      'Aikido Kankouji-ryu dojo in the UK, led by Joseph Eiko (7th Dan Shihan). Learn the way of harmony through traditional Aikido training.',
+    description,
+  },
+  // JSON-LD passed to Layout; @context and url are added there.
+  schema: {
+    '@type': 'SportsActivityLocation',
+    name: 'Aikido Kankouji-ryu',
+    description,
+    sport: 'Aikido',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '1A The Parade, Benyon Rd',
+      addressLocality: 'Carshalton',
+      addressRegion: 'Surrey',
+      postalCode: 'SM5 3RL',
+      addressCountry: 'GB',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 51.3626838,
+      longitude: -0.1677329,
+    },
   },
   nav: {
     about: 'About',
@@ -15,29 +37,29 @@ export const t = {
     titleJp: '合気道 冠光寺流',
     titleEn: 'Aikido Kankouji-ryu',
     tagline:
-      'The way of harmony \u2014 cultivating body, mind, and spirit through the art of Aikido',
+      'The way of harmony — cultivating body, mind, and spirit through the art of Aikido',
     cta: 'Get in Touch',
     scroll: 'Scroll',
   },
   about: {
     title: 'What is Aikido?',
     subtitle: '合気道とは',
-    p1: 'The spirit of Aikido, as expressed in the word \u201caiki,\u201d lies in the attitude of living together in harmony without conflict. Aikido is not merely a martial art for fighting, but a path to protect both oneself and others, and to build peace.',
-    p2: 'For this reason, Aikido emphasizes not clashing with force, but accepting and redirecting the opponent\u2019s energy to create harmony. Through training, practitioners cultivate both body and mind, nurture a spirit of respect, and value mutual growth over victory or defeat.',
+    p1: 'The spirit of Aikido, as expressed in the word “aiki,” lies in the attitude of living together in harmony without conflict. Aikido is not merely a martial art for fighting, but a path to protect both oneself and others, and to build peace.',
+    p2: 'For this reason, Aikido emphasizes not clashing with force, but accepting and redirecting the opponent’s energy to create harmony. Through training, practitioners cultivate both body and mind, nurture a spirit of respect, and value mutual growth over victory or defeat.',
     p3: 'This spirit extends beyond the dojo into everyday life, fostering the ability to respond flexibly in the face of difficulties, to seek harmony in human relationships, and to achieve inner stability through proper posture and breathing.',
   },
   instructor: {
     title: 'Instructor',
     subtitle: '指導者',
     name: 'Joseph Eiko',
-    rank: '7th Dan Shihan \u2014 Kankouji-ryu Jujutsu',
+    rank: '7th Dan Shihan — Kankouji-ryu Jujutsu',
     bio1: 'From a young age, Joseph has studied Qigong and martial arts, while also immersing himself in the spiritual traditions of the East. His training includes Kendo, Karate, and Aikido, and he currently holds the rank of 7th Dan Shihan in Kankouji-ryu Jujutsu.',
-    bio2: 'Now based in the UK, he also provides treatments that help balance the flow of \u201cKi,\u201d supporting harmony of both body and mind. With years of experience in martial arts and energy practice, Joseph is dedicated to sharing his knowledge in a clear and approachable way.',
+    bio2: 'Now based in the UK, he also provides treatments that help balance the flow of “Ki,” supporting harmony of both body and mind. With years of experience in martial arts and energy practice, Joseph is dedicated to sharing his knowledge in a clear and approachable way.',
   },
   firstVisit: {
     title: 'Your First Class',
     subtitle: 'はじめての方へ',
-    intro: 'New to Aikido? Everyone is welcome, regardless of age or experience. Here\u2019s what to know before your first session.',
+    intro: 'New to Aikido? Everyone is welcome, regardless of age or experience. Here’s what to know before your first session.',
     items: [
       {
         label: 'What to wear',
@@ -45,7 +67,7 @@ export const t = {
       },
       {
         label: 'Fitness level',
-        text: 'No prior fitness or martial arts experience is required. Training is adapted to each individual\u2019s ability.',
+        text: 'No prior fitness or martial arts experience is required. Training is adapted to each individual’s ability.',
       },
       {
         label: 'What to expect',
@@ -83,7 +105,6 @@ export const t = {
     viewOnMap: 'View on Google Maps',
   },
   footer: {
-    copy: 'Aikido Kankouji-ryu. All rights reserved.',
-    backToTop: 'Back to top \u2191',
+    backToTop: 'Back to top ↑',
   },
 };

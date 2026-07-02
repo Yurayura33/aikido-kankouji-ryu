@@ -1,5 +1,13 @@
 ---
-import { t } from '../content';
+import { site } from '../data/site';
+
+interface Props {
+  copy?: string;
+  backToTop: string;
+  instagram?: string;
+}
+
+const { copy = site.copyright, backToTop, instagram = site.social.instagram } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -7,7 +15,7 @@ const currentYear = new Date().getFullYear();
   <div class="container">
     <div class="footer__social">
       <a
-        href="https://www.youtube.com/@kienergyjoseph"
+        href={site.social.youtube}
         class="footer__social-link"
         target="_blank"
         rel="noopener noreferrer"
@@ -18,7 +26,7 @@ const currentYear = new Date().getFullYear();
         </svg>
       </a>
       <a
-        href="https://www.instagram.com/joseph__martialarts"
+        href={instagram}
         class="footer__social-link"
         target="_blank"
         rel="noopener noreferrer"
@@ -29,7 +37,7 @@ const currentYear = new Date().getFullYear();
         </svg>
       </a>
       <a
-        href="https://www.facebook.com/profile.php?id=61572194902716"
+        href={site.social.facebook}
         class="footer__social-link"
         target="_blank"
         rel="noopener noreferrer"
@@ -40,7 +48,7 @@ const currentYear = new Date().getFullYear();
         </svg>
       </a>
     </div>
-    <p class="footer__copy">&copy; {currentYear} {t.footer.copy}</p>
-    <a href="#" class="footer__top-link">{t.footer.backToTop}</a>
+    <p class="footer__copy">&copy; {currentYear} {copy}</p>
+    <a href="#" class="footer__top-link">{backToTop}</a>
   </div>
 </footer>

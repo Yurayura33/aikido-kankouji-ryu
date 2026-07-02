@@ -1,13 +1,14 @@
 ---
-import { t } from '../content';
+import { aikido } from '../data/aikido';
+import { site } from '../data/site';
 ---
 
 <section id="videos" class="section section--alt">
   <div class="container">
-    <h2 class="section__title">{t.videos.title}</h2>
-    <p class="section__subtitle">{t.videos.subtitle}</p>
+    <h2 class="section__title">{aikido.videos.title}</h2>
+    <p class="section__subtitle">{aikido.videos.subtitle}</p>
     <div class="videos__content">
-      <p class="videos__description">{t.videos.description}</p>
+      <p class="videos__description">{aikido.videos.description}</p>
       <div class="videos__embed">
         <iframe
           src="https://www.youtube.com/embed/VpUISxtbkfE"
@@ -19,7 +20,7 @@ import { t } from '../content';
       </div>
       <div class="videos__social">
         <a
-          href="https://www.youtube.com/@kienergyjoseph"
+          href={site.social.youtube}
           class="videos__social-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -30,7 +31,7 @@ import { t } from '../content';
           YouTube
         </a>
         <a
-          href="https://www.instagram.com/joseph__martialarts"
+          href={site.social.instagram}
           class="videos__social-link"
           target="_blank"
           rel="noopener noreferrer"

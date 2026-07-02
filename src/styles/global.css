@@ -468,6 +468,7 @@ p {
   line-height: 1.85;
   max-width: 600px;
   margin: 0 auto 2rem;
+  text-align: left;
 }
 
 .videos__embed {
@@ -673,6 +674,11 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .contact__grid--therapy {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+  }
+
   .image-band {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -723,7 +729,7 @@ p {
     gap: 4rem;
   }
 
-  .contact__grid {
+  .contact__grid--full {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
     align-items: start;
@@ -732,25 +738,25 @@ p {
     max-width: 1000px;
   }
 
-  .contact__item:nth-child(1) {
+  .contact__grid--full .contact__item:nth-child(1) {
     grid-column: 1;
     grid-row: 1 / span 2;
     align-self: stretch;
   }
 
-  .contact__item:nth-child(2) {
+  .contact__grid--full .contact__item:nth-child(2) {
     grid-column: 2;
     grid-row: 1 / span 2;
     align-self: stretch;
   }
 
-  .contact__item:nth-child(3) {
+  .contact__grid--full .contact__item:nth-child(3) {
     grid-column: 3;
     grid-row: 1;
     align-self: stretch;
   }
 
-  .contact__item:nth-child(4) {
+  .contact__grid--full .contact__item:nth-child(4) {
     grid-column: 3;
     grid-row: 2;
     align-self: stretch;
@@ -758,5 +764,243 @@ p {
 
   .contact__map {
     max-width: 1000px;
+  }
+}
+
+/* ===== Therapy theme (sage/olive) ===== */
+[data-theme="therapy"] {
+  --color-accent: #5b6a47;
+  --color-gold: #9a8a4f;
+}
+
+/* ===== About: image-less statement ===== */
+.about__statement {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about__statement p {
+  font-size: clamp(1rem, 0.95rem + 0.35vw, 1.15rem);
+  line-height: 1.9;
+}
+
+.about__statement p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== First Visit / Methods note ===== */
+.first-visit__note {
+  font-size: 0.88rem;
+  font-style: italic;
+  opacity: 0.8;
+  text-align: left;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+/* ===== Contact intro ===== */
+.contact__intro {
+  text-align: left;
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ===== Pricing ===== */
+.pricing {
+  max-width: 560px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  border-radius: 6px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  padding: clamp(1.5rem, 1rem + 3vw, 2.75rem);
+}
+
+.pricing__list {
+  list-style: none;
+}
+
+.pricing__row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--color-cream);
+}
+
+.pricing__row:last-child {
+  border-bottom: none;
+}
+
+.pricing__duration,
+.pricing__price {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pricing__price {
+  color: var(--color-accent);
+}
+
+.pricing__dots {
+  flex: 1;
+  border-bottom: 2px dotted rgba(0, 0, 0, 0.18);
+  transform: translateY(-0.25rem);
+}
+
+.pricing__homevisit {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-gold);
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.pricing__note {
+  text-align: left;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+
+/* ===== Hub (home) ===== */
+.hub-hero {
+  position: relative;
+  overflow: hidden;
+  margin-top: var(--nav-height);
+  background-color: var(--color-cream);
+  padding: clamp(4rem, 3rem + 7vw, 8rem) 0;
+  text-align: center;
+}
+
+/* Large, faint Japanese watermark behind the English heading */
+.hub-hero__kanji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: clamp(3.5rem, 17vw, 13rem);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--color-ink);
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.hub-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hub-hero__title {
+  font-size: clamp(2rem, 1.5rem + 3vw, 3.75rem);
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.hub-hero__tagline {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.hub__services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  color: var(--color-ink);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  color: var(--color-ink);
+}
+
+.service-card__image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.service-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-card__image img {
+  transform: scale(1.04);
+}
+
+.service-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.service-card__jp {
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.service-card__name {
+  font-size: clamp(1.3rem, 1.1rem + 1vw, 1.8rem);
+  margin-bottom: 0.5rem;
+}
+
+.service-card__blurb {
+  flex: 1;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.service-card__cta {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+.service-card:hover .service-card__cta {
+  color: var(--color-gold);
+}
+
+.service-card--therapy .service-card__jp,
+.service-card--therapy .service-card__cta {
+  color: #5b6a47;
+}
+
+.service-card--therapy:hover .service-card__cta {
+  color: #7a8a5f;
+}
+
+@media (min-width: 768px) {
+  .hub__services {
+    grid-template-columns: 1fr 1fr;
   }
 }

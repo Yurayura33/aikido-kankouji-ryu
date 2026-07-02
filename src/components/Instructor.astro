@@ -1,28 +1,40 @@
 ---
 import { Image } from 'astro:assets';
-import instructorImage from '../assets/image1.jpeg';
-import { t } from '../content';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  id: string;
+  title: string;
+  subtitle: string;
+  name: string;
+  rank: string;
+  bios: string[];
+  image: ImageMetadata;
+  imageAlt: string;
+  alt?: boolean;
+}
+
+const { id, title, subtitle, name, rank, bios, image, imageAlt, alt = false } = Astro.props;
 ---
 
-<section id="instructor" class="section">
+<section id={id} class:list={['section', { 'section--alt': alt }]}>
   <div class="container">
-    <h2 class="section__title">{t.instructor.title}</h2>
-    <p class="section__subtitle">{t.instructor.subtitle}</p>
+    <h2 class="section__title">{title}</h2>
+    <p class="section__subtitle">{subtitle}</p>
     <div class="instructor__grid">
       <div class="instructor__image-wrapper">
         <Image
-          src={instructorImage}
-          alt="Joseph Eiko, 7th Dan Shihan of Kankouji-ryu"
+          src={image}
+          alt={imageAlt}
           widths={[300, 500, 700]}
           sizes="(min-width: 768px) 350px, 100vw"
           loading="lazy"
         />
       </div>
       <div class="instructor__info">
-        <h3 class="instructor__name">{t.instructor.name}</h3>
-        <p class="instructor__rank">{t.instructor.rank}</p>
-        <p class="instructor__bio">{t.instructor.bio1}</p>
-        <p class="instructor__bio">{t.instructor.bio2}</p>
+        <h3 class="instructor__name">{name}</h3>
+        <p class="instructor__rank">{rank}</p>
+        {bios.map(b => <p class="instructor__bio">{b}</p>)}
       </div>
     </div>
   </div>

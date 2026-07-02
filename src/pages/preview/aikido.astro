@@ -1,25 +1,24 @@
 ---
-// Live homepage — the original Aikido Kankouji-ryu single page, unchanged for visitors.
-// The new multi-page site lives under /preview until the client signs it off.
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Instructor from '../components/Instructor.astro';
-import FirstVisit from '../components/FirstVisit.astro';
-import ImageBand from '../components/ImageBand.astro';
-import Videos from '../components/Videos.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
-import { aikido } from '../data/aikido';
+// Hidden preview of the Aikido page in its multi-page form. Promote to /aikido.astro once signed off.
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Instructor from '../../components/Instructor.astro';
+import FirstVisit from '../../components/FirstVisit.astro';
+import ImageBand from '../../components/ImageBand.astro';
+import Videos from '../../components/Videos.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import { aikido } from '../../data/aikido';
 
-import heroImage from '../assets/image7.jpeg';
-import aboutImage from '../assets/image2.jpeg';
-import instructorImage from '../assets/image1.jpeg';
-import img3 from '../assets/image3.jpeg';
-import img4 from '../assets/image4.jpeg';
-import img5 from '../assets/image5.jpeg';
-import img6 from '../assets/image6.jpeg';
+import heroImage from '../../assets/image7.jpeg';
+import aboutImage from '../../assets/image2.jpeg';
+import instructorImage from '../../assets/image1.jpeg';
+import img3 from '../../assets/image3.jpeg';
+import img4 from '../../assets/image4.jpeg';
+import img5 from '../../assets/image5.jpeg';
+import img6 from '../../assets/image6.jpeg';
 
 const navLinks = [
   { href: '#about', label: aikido.nav.about },
@@ -27,6 +26,7 @@ const navLinks = [
   { href: '#first-visit', label: aikido.nav.firstVisit },
   { href: '#videos', label: aikido.nav.videos },
   { href: '#contact', label: aikido.nav.contact },
+  { href: '/preview/therapy', label: 'Therapy' },
 ];
 ---
 
@@ -34,8 +34,9 @@ const navLinks = [
   title={aikido.meta.title}
   description={aikido.meta.description}
   schema={aikido.schema}
+  noindex
 >
-  <Header brand="Aikido Kankouji-ryu" brandHref="#" links={navLinks} />
+  <Header brand="Aikido Kankouji-ryu" brandHref="/preview" links={navLinks} />
   <main id="main">
     <Hero
       titleJp={aikido.hero.titleJp}
