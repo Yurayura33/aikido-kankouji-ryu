@@ -50,5 +50,25 @@ const currentYear = new Date().getFullYear();
     </div>
     <p class="footer__copy">&copy; {currentYear} {copy}</p>
     <a href="#" class="footer__top-link">{backToTop}</a>
+    <p class="footer__credit">
+      <a
+        class="hshk-credit"
+        href="https://www.hoshiko.tech/websites/?ref=iris-one-united"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="hshk-spark" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="hshk-g" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22d3ee" />
+              <stop offset=".5" stop-color="#818cf8" />
+              <stop offset="1" stop-color="#c084fc" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#hshk-g)" d="M12 0c.5 6.5 5 11 12 12-7 1-11.5 5.5-12 12-.5-6.5-5-11-12-12 7-1 11.5-5.5 12-12z"/>
+        </svg>
+        <span>Built by <span class="hshk-name">Hoshiko Tech Ltd</span></span>
+      </a>
+    </p>
   </div>
 </footer>
