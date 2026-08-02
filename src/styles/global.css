@@ -642,7 +642,8 @@ p {
 }
 
 .footer__credit {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 /* "Built by Hoshiko Tech" credit — self-contained snippet, classes namespaced
