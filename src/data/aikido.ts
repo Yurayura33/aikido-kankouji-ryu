@@ -85,6 +85,9 @@ export const aikido = {
     subtitle: '動画・SNS',
     description:
       'Watch our training sessions and technique demonstrations on YouTube, or follow us on Instagram for the latest updates.',
+    play: 'Play video',
+    embedNotice:
+      'Playing the video loads it from YouTube, which receives your IP address and may set cookies. We’ll remember your choice on this device.',
   },
   contact: {
     title: 'Contact',
@@ -103,6 +106,9 @@ export const aikido = {
     trialLocation: '21 N End, Croydon CR0 1TY',
     trialNote: 'Details and confirmed dates will be announced on our',
     viewOnMap: 'View on Google Maps',
+    showMap: 'Show map',
+    mapNotice:
+      'Showing the map loads it from Google, which receives your IP address and may set cookies. We’ll remember your choice on this device.',
   },
   footer: {
     backToTop: 'Back to top ↑',

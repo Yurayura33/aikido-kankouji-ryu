@@ -1,6 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import { aikido } from '../data/aikido';
 import { site } from '../data/site';
+// Self-hosted copy of the video's YouTube thumbnail, so the placeholder makes no request to YouTube.
+import poster from '../assets/video-poster.jpg';
+
+// Privacy-enhanced mode; the click URL autoplays, since the click was the request to watch.
+const videoSrc = 'https://www.youtube-nocookie.com/embed/VpUISxtbkfE';
 ---
 
 <section id="videos" class="section section--alt">
@@ -9,14 +15,29 @@ import { site } from '../data/site';
     <p class="section__subtitle">{aikido.videos.subtitle}</p>
     <div class="videos__content">
       <p class="videos__description">{aikido.videos.description}</p>
-      <div class="videos__embed">
-        <iframe
-          src="https://www.youtube.com/embed/VpUISxtbkfE"
-          title="Aikido Kankouji-ryu training"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+      <!-- Click-to-load: nothing is requested from YouTube until the visitor asks (public/embeds.js). -->
+      <div class="videos__media" data-embed="youtube">
+        <div class="videos__embed">
+          <iframe
+            data-src={videoSrc}
+            data-src-click={`${videoSrc}?autoplay=1`}
+            hidden
+            title="Aikido Kankouji-ryu training"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+          <button type="button" class="embed__load embed__load--video" data-embed-load data-embed-placeholder>
+            <Image src={poster} alt="" class="embed__poster" widths={[480, 640]} sizes="(min-width: 848px) 800px, 100vw" />
+            <span class="embed__cta">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
+              {aikido.videos.play}
+            </span>
+          </button>
+        </div>
+        <p class="embed__notice" data-embed-placeholder>
+          {aikido.videos.embedNotice} <a href={`${site.privacy.href}#embeds`}>{site.privacy.embedsLink}</a>
+        </p>
       </div>
       <div class="videos__social">
         <a

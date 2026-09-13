@@ -7,4 +7,10 @@ export const site = {
   },
   // Site-wide copyright holder (registered company).
   copyright: 'Iris One United Ltd. All rights reserved.',
+  privacy: {
+    href: '/privacy',
+    label: 'Privacy policy',
+    // Link text after the click-to-load notices on the map and video.
+    embedsLink: 'Details and settings',
+  },
 };

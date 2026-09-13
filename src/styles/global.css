@@ -7,8 +7,8 @@
   --color-cream: #f4f1eb;
   --color-white: #ffffff;
 
-  --font-heading: 'Noto Serif JP', serif;
-  --font-body: 'Noto Sans JP', sans-serif;
+  --font-heading: 'Noto Serif JP Variable', serif;
+  --font-body: 'Noto Sans JP Variable', sans-serif;
 
   --max-width: 1200px;
   --nav-height: 64px;
@@ -66,6 +66,11 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Author `display` rules (e.g. `.contact__map iframe`) would otherwise beat the attribute. */
+[hidden] {
+  display: none !important;
 }
 
 a {
@@ -476,10 +481,14 @@ p {
   width: 100%;
   max-width: 800px;
   aspect-ratio: 16 / 9;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.videos__media {
+  margin-bottom: 2rem;
 }
 
 .videos__embed iframe {
@@ -582,6 +591,8 @@ p {
 
 /* ===== Contact Map ===== */
 .contact__map {
+  position: relative;
+  height: 350px;
   margin-top: 2.5rem;
   max-width: 700px;
   margin-left: auto;
@@ -594,7 +605,106 @@ p {
 .contact__map iframe {
   display: block;
   width: 100%;
-  height: 350px;
+  height: 100%;
+  border: 0;
+}
+
+/* ===== Click-to-load embeds (public/embeds.js) ===== */
+.embed__load {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.embed__load:focus-visible {
+  outline-offset: -4px;
+}
+
+.embed__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.embed__cta svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Faint grid so the placeholder reads as "a map goes here". */
+.embed__load--map {
+  background-color: var(--color-white);
+  background-image:
+    linear-gradient(rgba(38, 70, 83, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 70, 83, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.embed__load--map .embed__cta {
+  border: 1px solid var(--color-accent);
+  background-color: var(--color-white);
+  color: var(--color-accent);
+}
+
+.embed__load--map:hover .embed__cta {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.embed__load--video {
+  background-color: var(--color-ink);
+}
+
+.embed__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.embed__load--video:hover .embed__poster {
+  opacity: 0.6;
+}
+
+.embed__load--video .embed__cta {
+  background-color: rgba(26, 26, 46, 0.8);
+  color: var(--color-white);
+}
+
+.embed__load--video:hover .embed__cta {
+  background-color: var(--color-accent);
+}
+
+.embed__notice {
+  max-width: 640px;
+  margin: 0.75rem auto 0;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  text-align: center;
+  opacity: 0.75;
+}
+
+.embed__notice a {
+  color: var(--color-accent);
+  text-decoration: underline;
 }
 
 /* ===== Footer ===== */
@@ -629,6 +739,21 @@ p {
 
 .footer__copy {
   margin-bottom: 0.75rem;
+}
+
+.footer__legal {
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.footer__legal a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.footer__legal a:hover {
+  color: var(--color-gold);
 }
 
 .footer__top-link {
@@ -845,3 +970,82 @@ p {
   margin-bottom: 0;
 }
 
+/* ===== Legal pages (privacy) ===== */
+.legal {
+  margin-top: var(--nav-height);
+}
+
+.legal__inner {
+  max-width: 760px;
+}
+
+.legal h1 {
+  margin-bottom: 0.5rem;
+}
+
+.legal__updated {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 2.5rem;
+}
+
+.legal h2 {
+  font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.4rem);
+  margin: 2.5rem 0 0.75rem;
+}
+
+.legal ul {
+  margin: 0 0 1em 1.25rem;
+}
+
+.legal li {
+  margin-bottom: 0.35rem;
+}
+
+.legal a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.legal code {
+  font-size: 0.85em;
+  background-color: var(--color-cream);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  overflow-wrap: anywhere;
+}
+
+.legal__settings {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-cream);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 4px;
+}
+
+.legal__settings p {
+  margin-bottom: 0.75rem;
+}
+
+.legal__button {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  background-color: var(--color-white);
+  color: var(--color-accent);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.legal__button:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.legal__settings .legal__status {
+  font-size: 0.9rem;
+  margin: 0.75rem 0 0;
+}

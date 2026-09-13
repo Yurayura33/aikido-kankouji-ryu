@@ -62,17 +62,26 @@ const t = aikido;
         </p>
       </div>
     </div>
-    <div class="contact__map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9972!2d-0.1677329!3d51.3626838!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876076db66d1723%3A0x42cda0d0b40e7c5d!2sAikido%20Kankoujiryu!5e0!3m2!1sen!2suk"
-        width="600"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Aikido Kankouji-ryu location"
-      ></iframe>
+    <!-- Click-to-load: nothing is requested from Google until the visitor asks (public/embeds.js). -->
+    <div data-embed="maps">
+      <div class="contact__map">
+        <iframe
+          data-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9972!2d-0.1677329!3d51.3626838!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876076db66d1723%3A0x42cda0d0b40e7c5d!2sAikido%20Kankoujiryu!5e0!3m2!1sen!2suk"
+          hidden
+          allowfullscreen=""
+          loading="lazy"
+          title="Aikido Kankouji-ryu location"
+        ></iframe>
+        <button type="button" class="embed__load embed__load--map" data-embed-load data-embed-placeholder>
+          <span class="embed__cta">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            {t.contact.showMap}
+          </span>
+        </button>
+      </div>
+      <p class="embed__notice" data-embed-placeholder>
+        {t.contact.mapNotice} <a href={`${site.privacy.href}#embeds`}>{site.privacy.embedsLink}</a>
+      </p>
     </div>
   </div>
 </section>
