@@ -101,10 +101,6 @@ export const aikido = {
       { day: 'Every Sunday', time: '3:15 – 4:15 PM' },
       { day: 'Every Wednesday', time: '7:00 – 8:00 PM' },
     ],
-    trialLabel: 'Trial Class in Croydon',
-    trialSchedule: 'Roughly every 3rd Friday of the month (dates may vary)',
-    trialLocation: '21 N End, Croydon CR0 1TY',
-    trialNote: 'Details and confirmed dates will be announced on our',
     viewOnMap: 'View on Google Maps',
     showMap: 'Show map',
     mapNotice:
