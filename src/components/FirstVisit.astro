@@ -17,7 +17,7 @@ const { id, title, subtitle, intro, items, pricing, fees = [], note, alt = false
 <section id={id} class:list={['section', { 'section--alt': alt }]}>
   <div class="container">
     <h2 class="section__title">{title}</h2>
-    <p class="section__subtitle">{subtitle}</p>
+    <p class="section__subtitle" lang="ja">{subtitle}</p>
     <div class="first-visit__content">
       {intro && <p class="first-visit__intro">{intro}</p>}
       <dl class="first-visit__list">

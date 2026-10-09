@@ -178,56 +178,58 @@ p {
   color: var(--color-ink);
 }
 
-/* Hamburger (CSS-only) */
+/* Menu button (narrow screens); public/nav.js keeps aria-expanded up to date. */
 .nav__toggle {
   display: none;
-}
-
-.nav__toggle-label {
-  display: none;
-  cursor: pointer;
-  width: 32px;
-  height: 24px;
   position: relative;
   z-index: 1001;
+  /* A 32×24 icon in a 44×44 tap target, nudged right so the icon sits where the old one did. */
+  width: 44px;
+  height: 44px;
+  margin-right: -6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
 }
 
-.nav__toggle-label span,
-.nav__toggle-label span::before,
-.nav__toggle-label span::after {
+.nav__toggle span,
+.nav__toggle span::before,
+.nav__toggle span::after {
   display: block;
-  width: 100%;
+  width: 32px;
   height: 2px;
   background-color: var(--color-ink);
   position: absolute;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.nav__toggle-label span {
+.nav__toggle span {
   top: 50%;
+  left: 6px;
   transform: translateY(-50%);
 }
 
-.nav__toggle-label span::before {
+.nav__toggle span::before {
   content: '';
   top: -8px;
 }
 
-.nav__toggle-label span::after {
+.nav__toggle span::after {
   content: '';
   top: 8px;
 }
 
-.nav__toggle:checked + .nav__toggle-label span {
+.nav__toggle[aria-expanded='true'] span {
   background-color: transparent;
 }
 
-.nav__toggle:checked + .nav__toggle-label span::before {
+.nav__toggle[aria-expanded='true'] span::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-.nav__toggle:checked + .nav__toggle-label span::after {
+.nav__toggle[aria-expanded='true'] span::after {
   top: 0;
   transform: rotate(-45deg);
 }
@@ -341,6 +343,17 @@ p {
 @keyframes hero-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* Visitors who ask their system for less motion get no bouncing arrow and instant jumps. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero__scroll {
+    animation: none;
+  }
 }
 
 /* ===== About ===== */
@@ -873,7 +886,7 @@ p {
    so the menu collapses into the hamburger before larger text can push links off
    the fixed bar (which can't scroll sideways). Same widths as 768px/1024px at 16px. */
 @media (min-width: 48em) {
-  .nav__toggle-label {
+  .nav__toggle {
     display: none !important;
   }
 
@@ -888,7 +901,7 @@ p {
 }
 
 @media (max-width: 47.99em) {
-  .nav__toggle-label {
+  .nav__toggle {
     display: block;
   }
 
@@ -905,7 +918,7 @@ p {
     gap: 0;
   }
 
-  .nav__toggle:checked ~ .nav__links {
+  .nav__toggle[aria-expanded='true'] ~ .nav__links {
     display: flex;
   }
 

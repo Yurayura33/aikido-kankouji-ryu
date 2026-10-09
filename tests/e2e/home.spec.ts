@@ -65,7 +65,7 @@ test.describe('Menu', () => {
   test('on a phone reaches the Kankouji-ryu Aiki section', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 800 });
     await page.goto('/');
-    await page.getByLabel('Toggle menu').click();
+    await page.getByRole('button', { name: 'Menu' }).click();
     await page.getByRole('navigation').getByRole('link', { name: 'Kankouji-ryu Aiki' }).click();
 
     await expect(page.getByRole('heading', { name: 'What is Kankouji-ryu Aiki?' })).toBeInViewport();
@@ -103,7 +103,7 @@ test.describe('Menu', () => {
         await page.goto('/');
         expect(await page.evaluate(() => getComputedStyle(document.documentElement).fontSize)).toBe(`${fontSize}px`);
 
-        const toggle = page.getByLabel('Toggle menu');
+        const toggle = page.getByRole('button', { name: 'Menu' });
         if (await toggle.isVisible()) await toggle.click();
 
         for (const link of await page.locator('.nav__link').all()) {
@@ -120,7 +120,7 @@ test.describe('Menu', () => {
   test('on a phone separates the links with dividers', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 800 });
     await page.goto('/');
-    await page.getByLabel('Toggle menu').click();
+    await page.getByRole('button', { name: 'Menu' }).click();
 
     const dividers = await page
       .locator('.nav__link')
