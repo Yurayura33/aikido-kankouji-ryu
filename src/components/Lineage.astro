@@ -1,23 +1,19 @@
 ---
 import { Image } from 'astro:assets';
 import { aikido } from '../data/aikido';
-// Cropped from page 2 of the client's flyer; that is the only copy we have of these photos.
-import montserratImage from '../assets/lineage-montserrat.jpg';
-import estanislauImage from '../assets/lineage-estanislau.jpg';
-import yasueImage from '../assets/lineage-yasue.jpg';
 
 const { title, steps, uk, invitation } = aikido.lineage;
-const images = [montserratImage, estanislauImage, yasueImage];
 ---
 
 <section id="lineage" class="section section--alt">
   <div class="container">
     <h2 class="section__title section__title--solo">{title}</h2>
-    <ol class="lineage">
-      {steps.map((step, i) => (
+    <!-- role="list": Safari drops list semantics when list-style is none. -->
+    <ol class="lineage" role="list">
+      {steps.map(step => (
         <li class="lineage__step">
           <Image
-            src={images[i]}
+            src={step.image}
             alt={step.imageAlt}
             class="lineage__image"
             widths={[320, 480, 640]}

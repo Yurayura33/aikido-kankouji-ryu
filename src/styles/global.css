@@ -825,19 +825,6 @@ p {
 
 /* ===== Responsive: Tablet+ ===== */
 @media (min-width: 768px) {
-  .nav__toggle-label {
-    display: none !important;
-  }
-
-  .nav__links {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-  }
-
   .about__grid {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
@@ -881,8 +868,26 @@ p {
   }
 }
 
-/* ===== Responsive: Mobile ===== */
-@media (max-width: 767px) {
+/* ===== Navigation breakpoints ===== */
+/* In em rather than px: em media queries scale with the visitor's default font size,
+   so the menu collapses into the hamburger before larger text can push links off
+   the fixed bar (which can't scroll sideways). Same widths as 768px/1024px at 16px. */
+@media (min-width: 48em) {
+  .nav__toggle-label {
+    display: none !important;
+  }
+
+  .nav__links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: 47.99em) {
   .nav__toggle-label {
     display: block;
   }
@@ -910,15 +915,13 @@ p {
     border-bottom: 1px solid var(--color-cream);
   }
 
-  .nav__link:last-child {
+  .nav__links li:last-child .nav__link {
     border-bottom: none;
   }
-
 }
 
-/* ===== Responsive: Tablet only ===== */
-/* The full menu only just fits beside the logo below 1024px. */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* The full menu only just fits beside the logo until 64em. */
+@media (min-width: 48em) and (max-width: 63.99em) {
   .nav__links {
     gap: 1.25rem;
   }

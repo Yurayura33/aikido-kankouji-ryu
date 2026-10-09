@@ -91,6 +91,42 @@ test.describe('Menu', () => {
       }
     });
   }
+
+  // Visitors who raise the browser's default font size (e.g. Chrome's "Large" = 20px).
+  for (const fontSize of [16, 20, 24]) {
+    test(`keeps every link on screen with ${fontSize}px browser text`, async ({ page }) => {
+      const cdp = await page.context().newCDPSession(page);
+      await cdp.send('Page.setFontSizes', { fontSizes: { standard: fontSize } });
+
+      for (const width of [768, 820, 900, 1024, 1280]) {
+        await page.setViewportSize({ width, height: 900 });
+        await page.goto('/');
+        expect(await page.evaluate(() => getComputedStyle(document.documentElement).fontSize)).toBe(`${fontSize}px`);
+
+        const toggle = page.getByLabel('Toggle menu');
+        if (await toggle.isVisible()) await toggle.click();
+
+        for (const link of await page.locator('.nav__link').all()) {
+          const where = `"${await link.innerText()}" at ${width}px`;
+          const box = (await link.boundingBox())!;
+          expect(box.x, where).toBeGreaterThanOrEqual(0);
+          expect(box.x + box.width, where).toBeLessThanOrEqual(width);
+          expect(await link.evaluate((el) => el.getClientRects().length), where).toBe(1);
+        }
+      }
+    });
+  }
+
+  test('on a phone separates the links with dividers', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 800 });
+    await page.goto('/');
+    await page.getByLabel('Toggle menu').click();
+
+    const dividers = await page
+      .locator('.nav__link')
+      .evaluateAll((links) => links.map((link) => getComputedStyle(link).borderBottomWidth));
+    expect(dividers).toEqual(['1px', '1px', '1px', '1px', '1px', '0px']);
+  });
 });
 
 test.describe('Home page', () => {
@@ -100,7 +136,7 @@ test.describe('Home page', () => {
 
     await expect(instructor.getByRole('heading', { name: 'Joseph (Koken)' })).toBeVisible();
     await expect(instructor.getByText('7th Dan — Kankouji-ryu Aiki')).toBeVisible();
-    await expect(instructor.getByText(/Over 25 years of martial arts training/)).toBeVisible();
+    await expect(instructor.getByText(/In 25 years of martial arts training/)).toBeVisible();
     await expect(instructor.getByRole('img')).toHaveAttribute('alt', 'Joseph (Koken), 7th Dan of Kankouji-ryu Aiki');
   });
 

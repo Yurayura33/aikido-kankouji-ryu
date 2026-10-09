@@ -1,3 +1,8 @@
+// Cropped from page 2 of the client's flyer; that is the only copy we have of these photos.
+import montserratImage from '../assets/lineage-montserrat.jpg';
+import estanislauImage from '../assets/lineage-estanislau.jpg';
+import yasueImage from '../assets/lineage-yasue.jpg';
+
 const description =
   'Aikido Kankouji-ryu dojo in the UK, led by Joseph (Koken), 7th Dan in Kankouji-ryu Aiki. Learn the way of harmony through traditional Aikido training.';
 
@@ -49,7 +54,7 @@ export const aikido = {
     p2: 'For this reason, Aikido emphasizes not clashing with force, but accepting and redirecting the opponent’s energy to create harmony. Through training, practitioners cultivate both body and mind, nurture a spirit of respect, and value mutual growth over victory or defeat.',
     p3: 'This spirit extends beyond the dojo into everyday life, fostering the ability to respond flexibly in the face of difficulties, to seek harmony in human relationships, and to achieve inner stability through proper posture and breathing.',
   },
-  // The style taught here, from the client's flyer (kankoujiryu_aikido_advertisement.pdf).
+  // The style taught here, from the client's printed flyer.
   aiki: {
     title: 'What is Kankouji-ryu Aiki?',
     question: {
@@ -60,7 +65,16 @@ export const aikido = {
     paragraphs: [
       'Kankouji-ryu Aiki is a unique martial art that integrates the teachings of love from Jesus Christ with Aikido, a traditional Japanese martial art. Its core principle is “Love your enemies.”',
       'It does not aim to defeat an opponent, but to create no enemies, to understand others, and to transform conflict into harmony through love.',
-      'In Kankouji-ryu, “aiki” is also written 愛魂, from the characters for love (愛) and soul (魂).',
+    ],
+    // Japanese parts are marked so screen readers read them with a Japanese voice.
+    nameNote: [
+      'In Kankouji-ryu, “aiki” is also written ',
+      { ja: '愛魂' },
+      ', from the characters for love (',
+      { ja: '愛' },
+      ') and soul (',
+      { ja: '魂' },
+      ').',
     ],
   },
   lineage: {
@@ -69,16 +83,19 @@ export const aikido = {
       {
         name: 'Montserrat Monastery (Spain)',
         text: 'According to the tradition passed down in Montserrat, Spain, it is said that when Jesus faced a violent attacker, He overcame the situation not with hatred, but with love, and even transformed the attacker’s heart.',
+        image: montserratImage,
         imageAlt: 'Montserrat Monastery beneath the jagged peaks of the Montserrat mountains',
       },
       {
         name: 'Father Estanislau',
         text: 'This teaching was later transmitted to modern times through Father Estanislau.',
+        image: estanislauImage,
         imageAlt: 'Portrait of Father Estanislau',
       },
       {
         name: 'Prof. Kunio Yasue',
         text: 'Japanese martial artist Prof. Kunio Yasue inherited this tradition and, through many years of training in Japanese martial arts and the power of love, created Kankouji-ryu Aiki.',
+        image: yasueImage,
         imageAlt: 'Portrait of Prof. Kunio Yasue in a white training uniform',
       },
     ],
@@ -90,7 +107,7 @@ export const aikido = {
     subtitle: '指導者',
     name: 'Joseph (Koken)',
     rank: '7th Dan — Kankouji-ryu Aiki',
-    bio1: 'From a young age, Joseph has studied Qigong and martial arts, while also immersing himself in the spiritual traditions of the East. Over 25 years of martial arts training he has studied Kendo, Karate (in which he holds a black belt) and Aikido, and he currently holds the rank of 7th Dan in Kankouji-ryu Aiki.',
+    bio1: 'From a young age, Joseph has studied Qigong and martial arts, while also immersing himself in the spiritual traditions of the East. In 25 years of martial arts training he has studied Kendo, Karate (in which he holds a black belt) and Aikido, and he currently holds the rank of 7th Dan in Kankouji-ryu Aiki.',
     bio2: 'Now based in the UK, he also provides treatments that help balance the flow of “Ki,” supporting harmony of both body and mind. With years of experience in martial arts and energy practice, Joseph is dedicated to sharing his knowledge in a clear and approachable way.',
   },
   firstVisit: {

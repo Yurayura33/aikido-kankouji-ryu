@@ -1,7 +1,7 @@
 ---
 import { aikido } from '../data/aikido';
 
-const { title, question, paragraphs } = aikido.aiki;
+const { title, question, paragraphs, nameNote } = aikido.aiki;
 ---
 
 <section id="kankouji-ryu-aiki" class="section">
@@ -12,6 +12,7 @@ const { title, question, paragraphs } = aikido.aiki;
     </p>
     <div class="about__statement">
       {paragraphs.map(p => <p>{p}</p>)}
+      <p>{nameNote.map(part => (typeof part === 'string' ? part : <span lang="ja">{part.ja}</span>))}</p>
     </div>
   </div>
 </section>
