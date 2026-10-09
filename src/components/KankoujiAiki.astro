@@ -1,0 +1,17 @@
+---
+import { aikido } from '../data/aikido';
+
+const { title, question, paragraphs } = aikido.aiki;
+---
+
+<section id="kankouji-ryu-aiki" class="section">
+  <div class="container">
+    <h2 class="section__title section__title--solo">{title}</h2>
+    <p class="aiki__question">
+      {question.before}<em>{question.emphasis}</em>{question.after}
+    </p>
+    <div class="about__statement">
+      {paragraphs.map(p => <p>{p}</p>)}
+    </div>
+  </div>
+</section>

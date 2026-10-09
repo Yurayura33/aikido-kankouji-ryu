@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import { aikido } from '../data/aikido';
+// Cropped from page 2 of the client's flyer; that is the only copy we have of these photos.
+import montserratImage from '../assets/lineage-montserrat.jpg';
+import estanislauImage from '../assets/lineage-estanislau.jpg';
+import yasueImage from '../assets/lineage-yasue.jpg';
+
+const { title, steps, uk, invitation } = aikido.lineage;
+const images = [montserratImage, estanislauImage, yasueImage];
+---
+
+<section id="lineage" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title section__title--solo">{title}</h2>
+    <ol class="lineage">
+      {steps.map((step, i) => (
+        <li class="lineage__step">
+          <Image
+            src={images[i]}
+            alt={step.imageAlt}
+            class="lineage__image"
+            widths={[320, 480, 640]}
+            sizes="(min-width: 1200px) 370px, (min-width: 768px) 33vw, 100vw"
+            loading="lazy"
+          />
+          <h3 class="lineage__name">{step.name}</h3>
+          <p class="lineage__text">{step.text}</p>
+        </li>
+      ))}
+    </ol>
+    <div class="lineage__callout">
+      <p>{uk}</p>
+      <p>{invitation}</p>
+    </div>
+  </div>
+</section>

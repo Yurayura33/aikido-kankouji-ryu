@@ -129,6 +129,11 @@ p {
   margin-bottom: 0.5rem;
 }
 
+/* No subtitle underneath: keep the gap the subtitle would have left. */
+.section__title--solo {
+  margin-bottom: 2.5rem;
+}
+
 .section__subtitle {
   text-align: center;
   font-family: var(--font-heading);
@@ -238,6 +243,7 @@ p {
   font-weight: 500;
   color: var(--color-ink);
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .nav__link:hover {
@@ -910,6 +916,18 @@ p {
 
 }
 
+/* ===== Responsive: Tablet only ===== */
+/* The full menu only just fits beside the logo below 1024px. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav__links {
+    gap: 1.25rem;
+  }
+
+  .nav__link {
+    font-size: 0.9rem;
+  }
+}
+
 /* ===== Responsive: Desktop ===== */
 @media (min-width: 1024px) {
   .about__grid {
@@ -1033,4 +1051,104 @@ p {
 .legal__settings .legal__status {
   font-size: 0.9rem;
   margin: 0.75rem 0 0;
+}
+
+/* ===== First Visit: fees ===== */
+.first-visit__fees {
+  padding: 0.25rem 1.5rem;
+  background-color: var(--color-white);
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.first-visit__fee {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-cream);
+}
+
+.first-visit__fee:last-child {
+  border-bottom: 0;
+}
+
+.first-visit__fee dt {
+  font-weight: 500;
+}
+
+.first-visit__fee dd {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+/* ===== Kankouji-ryu Aiki ===== */
+.aiki__question {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 1.05rem + 1vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.aiki__question em {
+  font-style: normal;
+  color: var(--color-gold);
+}
+
+/* ===== Lineage ===== */
+.lineage {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+
+.lineage__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.25rem;
+}
+
+.lineage__name {
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  margin-bottom: 0.5rem;
+}
+
+.lineage__text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.lineage__callout {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+  line-height: 1.7;
+  background-color: var(--color-white);
+  border-top: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.lineage__callout p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .lineage {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }

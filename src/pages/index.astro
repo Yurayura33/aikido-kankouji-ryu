@@ -5,6 +5,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
+import KankoujiAiki from '../components/KankoujiAiki.astro';
+import Lineage from '../components/Lineage.astro';
 import Instructor from '../components/Instructor.astro';
 import FirstVisit from '../components/FirstVisit.astro';
 import ImageBand from '../components/ImageBand.astro';
@@ -23,6 +25,7 @@ import img6 from '../assets/image6.jpeg';
 
 const navLinks = [
   { href: '#about', label: aikido.nav.about },
+  { href: '#kankouji-ryu-aiki', label: aikido.nav.aiki },
   { href: '#instructor', label: aikido.nav.instructor },
   { href: '#first-visit', label: aikido.nav.firstVisit },
   { href: '#videos', label: aikido.nav.videos },
@@ -57,6 +60,8 @@ const navLinks = [
       imageAlt="Aikido technique demonstration at Kankouji-ryu dojo"
       alt
     />
+    <KankoujiAiki />
+    <Lineage />
     <Instructor
       id="instructor"
       title={aikido.instructor.title}
@@ -65,7 +70,7 @@ const navLinks = [
       rank={aikido.instructor.rank}
       bios={[aikido.instructor.bio1, aikido.instructor.bio2]}
       image={instructorImage}
-      imageAlt="Joseph Eiko, 7th Dan Shihan of Kankouji-ryu"
+      imageAlt="Joseph (Koken), 7th Dan of Kankouji-ryu Aiki"
     />
     <FirstVisit
       id="first-visit"
@@ -74,6 +79,7 @@ const navLinks = [
       intro={aikido.firstVisit.intro}
       items={aikido.firstVisit.items}
       pricing={aikido.firstVisit.pricing}
+      fees={aikido.firstVisit.fees}
       alt
     />
     <ImageBand images={[img5, img6, img3, img4]} />

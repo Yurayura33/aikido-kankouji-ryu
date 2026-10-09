@@ -6,11 +6,12 @@ interface Props {
   intro?: string;
   items: { label: string; text: string }[];
   pricing?: string;
+  fees?: { label: string; price: string }[];
   note?: string;
   alt?: boolean;
 }
 
-const { id, title, subtitle, intro, items, pricing, note, alt = false } = Astro.props;
+const { id, title, subtitle, intro, items, pricing, fees = [], note, alt = false } = Astro.props;
 ---
 
 <section id={id} class:list={['section', { 'section--alt': alt }]}>
@@ -28,7 +29,17 @@ const { id, title, subtitle, intro, items, pricing, note, alt = false } = Astro.
         ))}
       </dl>
       {pricing && <p class="first-visit__pricing">{pricing}</p>}
-      {note && <p class="first-visit__note">{note}</p>}
+      {fees.length > 0 && (
+        <dl class="first-visit__fees">
+          {fees.map(fee => (
+            <div class="first-visit__fee">
+              <dt>{fee.label}</dt>
+              <dd>{fee.price}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {note &&<p class="first-visit__note">{note}</p>}
     </div>
   </div>
 </section>

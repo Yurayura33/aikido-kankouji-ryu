@@ -1,5 +1,5 @@
 const description =
-  'Aikido Kankouji-ryu dojo in the UK, led by Joseph Eiko (7th Dan Shihan). Learn the way of harmony through traditional Aikido training.';
+  'Aikido Kankouji-ryu dojo in the UK, led by Joseph (Koken), 7th Dan in Kankouji-ryu Aiki. Learn the way of harmony through traditional Aikido training.';
 
 export const aikido = {
   meta: {
@@ -28,6 +28,7 @@ export const aikido = {
   },
   nav: {
     about: 'About',
+    aiki: 'Kankouji-ryu Aiki',
     instructor: 'Instructor',
     firstVisit: 'First Visit',
     videos: 'Videos',
@@ -48,12 +49,48 @@ export const aikido = {
     p2: 'For this reason, Aikido emphasizes not clashing with force, but accepting and redirecting the opponent’s energy to create harmony. Through training, practitioners cultivate both body and mind, nurture a spirit of respect, and value mutual growth over victory or defeat.',
     p3: 'This spirit extends beyond the dojo into everyday life, fostering the ability to respond flexibly in the face of difficulties, to seek harmony in human relationships, and to achieve inner stability through proper posture and breathing.',
   },
+  // The style taught here, from the client's flyer (kankoujiryu_aikido_advertisement.pdf).
+  aiki: {
+    title: 'What is Kankouji-ryu Aiki?',
+    question: {
+      before: 'How can the teaching ',
+      emphasis: '“Love your enemies”',
+      after: ' be practised through Budo?',
+    },
+    paragraphs: [
+      'Kankouji-ryu Aiki is a unique martial art that integrates the teachings of love from Jesus Christ with Aikido, a traditional Japanese martial art. Its core principle is “Love your enemies.”',
+      'It does not aim to defeat an opponent, but to create no enemies, to understand others, and to transform conflict into harmony through love.',
+      'In Kankouji-ryu, “aiki” is also written 愛魂, from the characters for love (愛) and soul (魂).',
+    ],
+  },
+  lineage: {
+    title: 'The Lineage and History',
+    steps: [
+      {
+        name: 'Montserrat Monastery (Spain)',
+        text: 'According to the tradition passed down in Montserrat, Spain, it is said that when Jesus faced a violent attacker, He overcame the situation not with hatred, but with love, and even transformed the attacker’s heart.',
+        imageAlt: 'Montserrat Monastery beneath the jagged peaks of the Montserrat mountains',
+      },
+      {
+        name: 'Father Estanislau',
+        text: 'This teaching was later transmitted to modern times through Father Estanislau.',
+        imageAlt: 'Portrait of Father Estanislau',
+      },
+      {
+        name: 'Prof. Kunio Yasue',
+        text: 'Japanese martial artist Prof. Kunio Yasue inherited this tradition and, through many years of training in Japanese martial arts and the power of love, created Kankouji-ryu Aiki.',
+        imageAlt: 'Portrait of Prof. Kunio Yasue in a white training uniform',
+      },
+    ],
+    uk: 'Now, for the first time outside of Japan, this unique path of Aiki can be learnt here in the UK.',
+    invitation: 'Join us and experience a new way to face conflict through Aiki.',
+  },
   instructor: {
     title: 'Instructor',
     subtitle: '指導者',
-    name: 'Joseph Eiko',
-    rank: '7th Dan Shihan — Kankouji-ryu Jujutsu',
-    bio1: 'From a young age, Joseph has studied Qigong and martial arts, while also immersing himself in the spiritual traditions of the East. His training includes Kendo, Karate, and Aikido, and he currently holds the rank of 7th Dan Shihan in Kankouji-ryu Jujutsu.',
+    name: 'Joseph (Koken)',
+    rank: '7th Dan — Kankouji-ryu Aiki',
+    bio1: 'From a young age, Joseph has studied Qigong and martial arts, while also immersing himself in the spiritual traditions of the East. Over 25 years of martial arts training he has studied Kendo, Karate (in which he holds a black belt) and Aikido, and he currently holds the rank of 7th Dan in Kankouji-ryu Aiki.',
     bio2: 'Now based in the UK, he also provides treatments that help balance the flow of “Ki,” supporting harmony of both body and mind. With years of experience in martial arts and energy practice, Joseph is dedicated to sharing his knowledge in a clear and approachable way.',
   },
   firstVisit: {
@@ -78,7 +115,12 @@ export const aikido = {
         text: 'Just yourself, a bottle of water, and an open mind. Please remove jewellery before training.',
       },
     ],
-    pricing: 'Your first class is free. After that: £30/month or £10 per lesson.',
+    pricing: 'Your first class is free. After that:',
+    fees: [
+      { label: 'Twice a week', price: '£50 / month' },
+      { label: 'Once a week', price: '£30 / month' },
+      { label: 'Drop-in', price: '£10 per class' },
+    ],
   },
   videos: {
     title: 'Videos & Social',
